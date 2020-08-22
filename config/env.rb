@@ -15,5 +15,7 @@ Oj.default_options = { mode: :compat }
 
 # require your libs/models here
 #
-# require_relative '../lib/file'
-# require_relative '../models/file'
+require_relative '../lib/ticker'
+require_relative '../lib/binance'
+require_relative '../lib/bitstamp'
+require_relative '../lib/balance'

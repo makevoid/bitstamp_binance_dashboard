@@ -17,6 +17,7 @@ class App < Roda
 
   route do |r|
     r.root {
+      @balances = Balance.all
       view 'index'
     }
 

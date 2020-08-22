@@ -1,3 +1,14 @@
-%h1 Home
+:ruby
 
-%p Welcome!
+%h3 MurkaTrader
+
+=# @balances.to_yaml
+
+.columns
+  - @balances.each_slice(6) do |balances|
+    - balances.each do |balance|
+      .column.asset
+        = fmt balance[:total]
+        = balance[:asset]
+        = balance[:usd]
+        %pre= balance.to_yaml
