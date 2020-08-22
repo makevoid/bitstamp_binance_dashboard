@@ -1,0 +1,34 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bigdecimal (2.0.0)
+    haml (5.1.2)
+      temple (>= 0.8.0)
+      tilt
+    hashie (4.1.0)
+    inflecto (0.0.2)
+    nio4r (2.5.2)
+    oj (3.10.12)
+      bigdecimal (>= 1.0, < 3)
+    puma (4.3.5)
+      nio4r (~> 2.0)
+    rack (2.2.3)
+    roda (3.35.0)
+      rack
+    temple (0.8.2)
+    tilt (2.0.10)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  hashie
+  inflecto
+  oj
+  puma
+  rack
+  roda
+
+BUNDLED WITH
+   2.1.4
