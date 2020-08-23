@@ -24,8 +24,12 @@ class Balance
     end
   end
 
-  def convert_usd
+  def usd_price(balances:)
 
+  end
+
+  def convert_usd(btc_price, balances:)
+    usd_price(balances: balances) * btc_price 
   end
 
 end
