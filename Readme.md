@@ -2,6 +2,14 @@
 
 Bitstamp & Binance dashboard app - shows your crypto trading track record on a dashboard pulling data directly from the exchanges via API
 
+### Project status
+
+ALPHA - functional but not completed
+
+- Binance: Done!
+- Bitstamp: TODO
+- Watched ETH addresses: TODO
+
 
 ### Configuration
 
@@ -23,7 +31,6 @@ export BINANCE_SECRET_KEY=XXX
 #### Bitstamp:
 
 soon
-
 
 
 ### Install
