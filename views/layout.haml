@@ -5,13 +5,16 @@
     %title App
     %link{ href: "/css/vendor/bulma.css", type: "text/css", rel: "stylesheet" }
     %link{ href: "/css/style.css", type: "text/css", rel: "stylesheet" }
+    %link{ href: "/css/main.css", type: "text/css", rel: "stylesheet" }
 
   %body{ class: body_class }
-    .container
+    .container.is-fluid
       %section.content
         .box
           = yield
 
-    %script{ src: "/js/vendor/handlebars.js", type: "text/javascript" }
-    %script{ src: "/js/vendor/underscore.js", type: "text/javascript" }
+    -# %script{ src: "/js/vendor/handlebars.js", type: "text/javascript" }
+    -# %script{ src: "/js/vendor/underscore.js", type: "text/javascript" }
+    %script{ src: "/js/vendor/axios.js", type: "text/javascript" }
+    %script{ src: "https://www.gstatic.com/charts/loader.js", type: "text/javascript" }
     %script{ src: "/js/app.js", type: "text/javascript" }

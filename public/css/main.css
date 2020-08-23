@@ -1,0 +1,43 @@
+/* bulma overrides */
+
+.title {
+  color: #AAA;
+}
+
+.box {
+  background: #222;
+}
+
+/* -------- */
+
+section.content h3 {
+  color: #AAA;
+}
+
+.chart {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  top: -1px;
+  left: -30px;
+}
+
+svg rect[width="2"] {
+  fill: #444;
+}
+
+.asset img {
+  margin-right: 7px;
+  position: relative;
+  top: 7px;
+}
+
+.asset .amounts {
+  position: relative;
+  top: -13px;
+}
+
+.mini {
+  font-size: 0.9em;
+  line-height: 1.3em;
+}

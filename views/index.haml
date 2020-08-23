@@ -5,18 +5,28 @@
 =# @balances.to_yaml
 
 .columns
-  - @balances.each_slice(6) do |balances|
+  .column
+    = fmt2 @bal_total
+    USD
+
+
+- @balances.each_slice(4) do |balances|
+  .columns
     - balances.each do |balance|
       .column.asset
-        %p
-          = fmt balance[:total]
-          = balance[:asset]
-        - if balance[:btc]
-          %p
-            = fmt balance[:btc]
-            BTC
-        - if balance[:usd]
-          %p
-            = '%.2f' % balance[:usd]
-            USD
-        %pre= balance.to_yaml
+        %img{ src: icon_url(asset: balance[:asset]) }
+        %span.title.is-4= balance[:asset]
+        .chart{ data: { asset: balance[:asset] } }
+        .amounts
+          %p.mini
+            = fmt balance[:total]
+            = balance[:asset]
+          - if balance[:btc]
+            %p.mini
+              = fmt balance[:btc]
+              BTC
+          - if balance[:usd]
+            %p.mini
+              = fmt2 balance[:usd]
+              USD
+          -# %pre= balance.to_yaml

@@ -10,6 +10,7 @@ class App < Roda
   plugin :not_found
   plugin :error_handler
   plugin :public
+  plugin :json
   # plugin :basic_auth, authenticator: proc {|_, pass| pass == PASSWORD }, realm: 'Please enter ANY username and the password'
 
   include RodaUtils
@@ -18,14 +19,13 @@ class App < Roda
   route do |r|
     r.root {
       @balances = Balance.all
+      @bal_total = @balances.sum { |bal| bal[:usd] }
       view 'index'
     }
 
-    r.on("foo") {
-      r.is {
-        r.get {
-          view 'page_one'
-        }
+    r.is('candles', String) { |asset|
+      r.get {
+        Candle.asset asset
       }
     }
 
