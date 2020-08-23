@@ -30,8 +30,13 @@ export BINANCE_SECRET_KEY=XXX
 
 #### Bitstamp:
 
-soon
+You don't want to give this key full permissions as this application just fetches your latest balances from the exchanges, Read-Balance permissions only are enough.
 
+```sh
+export BITSTAMP_API_KEY=XXX
+export BITSTAMP_API_SECRET=XXX
+export BITSTAMP_CLIENT_ID=123456
+```
 
 ### Install
 

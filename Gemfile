@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem 'bitstamp'
 gem 'binance-ruby'
 
 gem "hashie"
