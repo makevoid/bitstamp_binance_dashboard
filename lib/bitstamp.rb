@@ -7,7 +7,7 @@ class MKVBitstamp
   def balances
     balances = bitstamp_balances
     balances = filter_bitstamp_balances balances
-    raise balances.inspect
+    #raise balances.inspect
     balances = filter_zero_balances balances
     add_exchange_tag balances: balances
   end
@@ -15,7 +15,10 @@ class MKVBitstamp
   private
 
   def bitstamp_balances
-    Bitstamp.balance
+    resp = Bitstamp.balance
+    error = resp["error"]
+    raise "BitstampAPICredentialsError - error: #{error}" if error
+    resp
   end
 
   def filter_bitstamp_balances(balances)
@@ -40,7 +43,7 @@ class MKVBitstamp
 
   def add_exchange_tag(balances:)
     balances.map do |bal|
-      bal[:exchange] = :binance
+      bal[:exchange] = :bitstamp
       bal
     end
   end
