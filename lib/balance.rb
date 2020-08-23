@@ -8,28 +8,27 @@ class Balance
     balances =  MKVBinance.balances
     balances += MKVBitstamp.balances
     tickers = Ticker.all
-    balances = apply_tickers tickers
+    balances = apply_tickers tickers, balances: balances
     balances
   end
 
-  def apply_tickers(tickers)
-    balances.each do |bal|
-      ticker = tickers.find{ |tick| "#{bal[:asset]}USD" == tick[:symbol] }
-      price = ticker conversion: "BTC"
-      bal[:btc] = price
-      bal[:usd] = convert_usd price if price
-      price = ticker conversion: "USD"
-      bal[:usd] = price unless bal[:usd]
+  def apply_tickers(tickers, balances:)
+    balances.map do |bal|
+      conv = ticker tickers: tickers, conversion: "BTC", asset: bal[:asset]
+      if conv
+        price = bal[:total].to_f * conv
+        bal[:btc] = price
+        conv = ticker tickers: tickers, conversion: "USDT", asset: "BTC" # usdt as usd is not available on binance
+        price_usd = price * conv if conv
+        bal[:usd] = price_usd
+      end
       bal
     end
   end
 
-  def usd_price(balances:)
-
-  end
-
-  def convert_usd(btc_price, balances:)
-    usd_price(balances: balances) * btc_price 
+  def ticker(tickers:, asset:, conversion:)
+    tick = tickers.find{ |tick| "#{asset}#{conversion}" == tick[:symbol] }
+    tick && tick[:price].to_f
   end
 
 end

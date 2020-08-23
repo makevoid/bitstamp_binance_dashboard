@@ -6,6 +6,7 @@ class MKVBinance
 
   def balances
     balances = info.fetch :balances
+    balances = filter_useless_coins balances: balances
     balances = sum_total balances: balances
     balances = filter_zero_balances balances
     add_exchange_tag balances: balances
@@ -15,6 +16,17 @@ class MKVBinance
 
   def info
     Binance::Api::Account.info!
+  end
+
+  USELESS_COINS = %w(
+    EDO
+    JEX
+  )
+
+  def filter_useless_coins(balances:)
+    balances.reject do |bal|
+      bal if USELESS_COINS.include? bal[:asset]
+    end
   end
 
   def filter_zero_balances(balances)
