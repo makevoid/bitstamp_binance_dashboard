@@ -8,7 +8,7 @@ Bitstamp & Binance dashboard app - shows your crypto trading track record on a d
 
 ### Screenshot
 
-![https://raw.githubusercontent.com/makevoid/bitstamp_binance_dashboard/master/tmp/screenshots/screenshot1.png]()
+![](https://raw.githubusercontent.com/makevoid/bitstamp_binance_dashboard/master/tmp/screenshots/screenshot1.png)
 
 
 ### Configuration
