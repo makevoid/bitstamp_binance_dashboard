@@ -1,6 +1,6 @@
 # Bitstamp Binance Dashboard
 
-Bitstamp & Binance Dashboard to show all your crypto balances across the two exchanges nicely in a single screen which includes daily candlestick chart - The app pulls balance data directly from the exchanges via API (read-only API keys are required) 
+Bitstamp & Binance Dashboard to show all your crypto balances across the two exchanges nicely in a single screen which includes daily candlestick chart - The app pulls balance data directly from the exchanges via API (read-only API keys are required)
 
 ### Project status
 
@@ -51,7 +51,7 @@ export BITSTAMP_CLIENT_ID=123456
 
 then visit: <http://localhost:3000>
 
-You sould see a dashboard with your
+You should see the dashboard in all its glory!
 
 
 ---

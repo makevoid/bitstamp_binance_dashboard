@@ -1,5 +1,6 @@
 feature requests:
 
+- dockerize? (Dockerfile / docker-compose.yml)
 - add ETH watch addresses
 - add basic auth
 - improve layout (add cards/borders)
