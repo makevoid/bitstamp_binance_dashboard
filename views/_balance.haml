@@ -1,0 +1,20 @@
+%img{ src: icon_url(asset: balance[:asset]) }
+%span.title.is-4.asset-name
+  = balance[:asset]
+  = "<i>- Bitstamp</i>" if balance[:exchange] == :bitstamp
+- unless %w(EUR USD).include?  balance[:asset]
+  .chart{ data: { asset: balance[:asset] } }
+- else
+  .s50
+.amounts
+  %p.mini
+    = fmt balance[:total]
+    = balance[:asset]
+  - if balance[:btc]
+    %p.mini
+      = fmt balance[:btc]
+      BTC
+  - if balance[:usd]
+    %p.mini
+      = fmt2 balance[:usd]
+      USD

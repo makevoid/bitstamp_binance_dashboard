@@ -8,6 +8,21 @@
   background: #222;
 }
 
+/* helpers */
+
+.s3 { height: 3px; }
+.s5 { height: 5px; }
+.s10 { height: 10px; }
+.s20 { height: 20px; }
+.s30 { height: 30px; }
+.s40 { height: 40px; }
+.s50 { height: 50px; }
+.s60 { height: 60px; }
+.s70 { height: 70px; }
+.s80 { height: 80px; }
+.s90 { height: 90px; }
+.s100 { height: 100px; }
+
 /* -------- */
 
 section.content h3 {
@@ -40,4 +55,8 @@ svg rect[width="2"] {
 .mini {
   font-size: 0.9em;
   line-height: 1.3em;
+}
+
+.asset span.asset-name i {
+  font-size: 0.7em;
 }

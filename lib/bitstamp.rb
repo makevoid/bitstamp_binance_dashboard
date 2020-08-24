@@ -7,7 +7,6 @@ class MKVBitstamp
   def balances
     balances = bitstamp_balances
     balances = filter_bitstamp_balances balances
-    #raise balances.inspect
     balances = filter_zero_balances balances
     add_exchange_tag balances: balances
   end

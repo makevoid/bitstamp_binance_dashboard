@@ -19,7 +19,7 @@ class App < Roda
   route do |r|
     r.root {
       @balances = Balance.all
-      @bal_total = @balances.sum { |bal| bal[:usd] }
+      @bal_total = @balances.sum{ |bal| bal[:usd] }
       view 'index'
     }
 
