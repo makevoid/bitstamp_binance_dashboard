@@ -4,11 +4,11 @@ Bitstamp & Binance dashboard app - shows your crypto trading track record on a d
 
 ### Project status
 
-ALPHA - functional but not completed
+*BETA* - fully functional but not polished
 
-- Binance: Done!
-- Bitstamp: TODO
-- Watched ETH addresses: TODO
+### Screenshot
+
+![https://raw.githubusercontent.com/makevoid/bitstamp_binance_dashboard/master/tmp/screenshots/screenshot1.png]()
 
 
 ### Configuration
