@@ -50,17 +50,13 @@ const drawChart = async (elem, asset) => {
 }
 
 const drawCharts = () => {
-  // const elem = document.querySelector('.chart[data-asset=\"BTC\"]')
-  // drawChart(elem, "BTCUSDT")
-  // // drawChart(elem, "BTCUSDT")
   let chartElems = document.querySelectorAll(".chart")
   chartElems = Array.from(chartElems)
   chartElems.forEach((elem) => {
-    // const elem = document.querySelector('.chart[data-asset=\"BTC\"]')
-    console.log(elem)
     const asset = elem.dataset.asset
     let symbol = "BTCUSDT"
     if (asset !== "BTC") symbol = `${asset}BTC`
+    if (asset === "DAI") symbol = `USDT${asset}`
     drawChart(elem, symbol)
   })
 }

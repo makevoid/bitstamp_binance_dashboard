@@ -37,6 +37,9 @@ class Balance
       price_eur = total * conv
       bal[:usd] = price_eur
     end
+    if bal[:asset] == "USD" # bitstamp
+      bal[:usd] = total
+    end
     bal
   end
 
