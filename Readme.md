@@ -1,6 +1,6 @@
 # Bitstamp Binance Dashboard
 
-Bitstamp & Binance dashboard app - shows your crypto trading track record on a dashboard pulling data directly from the exchanges via API
+Bitstamp & Binance Dashboard to shows your crypto balances across the two exchanges with daily candlestick chart - The app pulls balance data directly from the exchanges via API (read-only API keys are required) 
 
 ### Project status
 
