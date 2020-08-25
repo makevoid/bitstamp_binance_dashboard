@@ -1,6 +1,6 @@
 FROM ruby:2.7.1-alpine3.11
 
-RUN apk --no-cache add make gcc libc-dev \
+RUN apk --no-cache add make gcc libc-dev curl-dev \
     rm -rf /var/cache/apk/*
 
 

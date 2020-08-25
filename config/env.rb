@@ -14,6 +14,13 @@ PATH = path
 
 APP_ENV = ENV["RACK_ENV"] || "development"
 
+DOCKER = ENV["DOCKER"] == "1"
+
+
+DEFAULT_AUTH_PASSWORD = "8ecff759d2e8ab2"
+auth_password = ENV["AUTH_PASSWORD"]
+puts "Warning: using the default auth password, consider providing a proper AUTH_PASSWORD env var" unless auth_password
+AUTH_PASSWORD = auth_password || DEFAULT_AUTH_PASSWORD
 
 Oj.default_options = { mode: :compat }
 

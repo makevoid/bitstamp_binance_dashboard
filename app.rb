@@ -11,13 +11,15 @@ class App < Roda
   plugin :error_handler
   plugin :public
   plugin :json
-  # plugin :basic_auth, authenticator: proc {|_, pass| pass == PASSWORD }, realm: 'Please enter ANY username and the password'
+  plugin :http_auth, authenticator: -> (_, pass) { pass == AUTH_PASSWORD }, realm: 'Please enter ANY username and the password'
 
   include RodaUtils
   include ViewHelpers
 
   route do |r|
+
     r.root {
+      http_auth
       @balances = Balance.all
       @bal_total = @balances.sum{ |bal| bal[:usd] }
       view 'index'
@@ -29,7 +31,7 @@ class App < Roda
       }
     }
 
-    r.public if APP_ENV != "production"
+    r.public if DOCKER || APP_ENV != "production"
   end
 
   not_found do

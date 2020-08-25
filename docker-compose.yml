@@ -7,4 +7,12 @@ services:
     image: makevoid/app
     ports:
       - 3000:3000
-    environment: []
+    environment:
+      - DOCKER=1
+      - RACK_ENV=production
+      - AUTH_PASSWORD
+      - BINANCE_API_KEY
+      - BINANCE_SECRET_KEY
+      - BITSTAMP_API_KEY
+      - BITSTAMP_API_SECRET
+      - BITSTAMP_CLIENT_ID

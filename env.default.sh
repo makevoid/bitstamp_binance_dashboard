@@ -1,0 +1,6 @@
+export AUTH_PASSWORD=pass
+export BINANCE_API_KEY=xxx
+export BINANCE_SECRET_KEY=xxx
+export BITSTAMP_API_KEY=xxx
+export BITSTAMP_API_SECRET=xxx
+export BITSTAMP_CLIENT_ID=123456
