@@ -51,8 +51,28 @@ export BITSTAMP_CLIENT_ID=123456
 
 then visit: <http://localhost:3000>
 
+(note that the default basic auth password is specified in `env.rb` unless provided via environment variable)
+
 You should see the dashboard in all its glory!
 
+
+### Run via Docker / Compose
+
+#### Prepare:
+
+    cp env.default.sh env.sh
+
+Then edit `env.sh` with your desired credentials
+
+
+#### Run (with env vars):
+
+    source env.sh && docker-compose up --build
+
+
+then visit: <http://localhost:3000>
+
+(note that the basic auth username is blank and the password is the one specified in `env.sh`)
 
 ---
 

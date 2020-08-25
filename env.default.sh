@@ -1,4 +1,4 @@
-export AUTH_PASSWORD=pass
+export AUTH_PASSWORD=155393a5b96977b25
 export BINANCE_API_KEY=xxx
 export BINANCE_SECRET_KEY=xxx
 export BITSTAMP_API_KEY=xxx
