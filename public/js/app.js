@@ -1,4 +1,5 @@
-const host = "http://localhost:3000"
+// const host = "http://localhost:3000"
+const host = ""
 
 google.charts.load('current', {'packages':['corechart']})
 
