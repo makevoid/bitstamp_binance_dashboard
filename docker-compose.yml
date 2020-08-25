@@ -1,10 +1,10 @@
 version: "3"
 
 services:
-  app:
+  bitstamp_binance_dashboard:
     build:
       context: .
-    image: makevoid/app
+    image: makevoid/bitstamp_binance_dashboard
     ports:
       - 3000:3000
     environment:
