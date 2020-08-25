@@ -25,5 +25,4 @@ class Ticker
     Bitstamp::Net.get("/ticker/#{symbol}").body_str
   end
 
-
 end

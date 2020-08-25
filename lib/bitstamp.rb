@@ -14,10 +14,21 @@ class MKVBitstamp
   private
 
   def bitstamp_balances
-    resp = Bitstamp.balance
+    # resp = Bitstamp.balance # legacy api
+    resp = bitstamp_balances_json # v2
     error = resp["error"]
     raise "BitstampAPICredentialsError - error: #{error}" if error
     resp
+  end
+
+  def bitstamp_balances_json
+    balances = bitstamp_balances_raw
+    balances = JSON.parse balances
+    balances
+  end
+
+  def bitstamp_balances_raw
+    Bitstamp::Net.post("/v2/balance").body_str
   end
 
   def filter_bitstamp_balances(balances)

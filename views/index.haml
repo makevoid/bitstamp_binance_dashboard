@@ -9,7 +9,7 @@
 - @balances.each_slice(columns_num) do |balances|
   .columns
     - balances.each do |balance|
-      .column.asset
+      .column.asset.is-desktop
         = partial "balance", locals: { balance: balance }
     - empty_cols = columns_num - balances.size
     - empty_cols.times do
