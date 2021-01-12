@@ -8,6 +8,13 @@ task :dev do
   sh "rerun -s KILL -p \"**/*.{rb}\" -- bundle exec rackup -p 3000"
 end
 
+desc "Release - push to docker"
+task :release do
+  sh "docker-compose build && docker-compose push"
+end
+
+task docker_push: :release
+
 SASS_OPTS = "--sourcemap=none public/sass/style.sass:public/css/style.css"
 
 desc "Setup"
