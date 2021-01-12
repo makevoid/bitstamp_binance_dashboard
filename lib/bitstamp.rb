@@ -16,6 +16,7 @@ class MKVBitstamp
   def bitstamp_balances
     # resp = Bitstamp.balance # legacy api
     resp = bitstamp_balances_json # v2
+    raise resp.inspect
     error = resp["error"]
     raise "BitstampAPICredentialsError - error: #{error}" if error
     resp

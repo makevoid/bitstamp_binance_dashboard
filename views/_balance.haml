@@ -2,7 +2,7 @@
 %span.title.is-4.asset-name
   = balance[:asset]
   = "<i>- Bitstamp</i>" if balance[:exchange] == :bitstamp
-- unless %w(EUR USD).include?  balance[:asset]
+- unless %w(EUR USD GBP).include?  balance[:asset]
   .chart{ data: { asset: balance[:asset] } }
 - else
   .s50
