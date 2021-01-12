@@ -37,7 +37,7 @@ class Balance
       price_eur = total * conv
       bal[:usd] = price_eur
     end
-    if bal[:asset] == "EUR" # bitstamp
+    if bal[:asset] == "GBP" # bitstamp
       conv = ticker_gbp
       price_gbp = total * conv
       bal[:usd] = price_gbp
@@ -57,11 +57,11 @@ class Balance
   end
 
   def ticker_eur
-    @ticker_eur ||= (Ticker.eur.fetch "last").to_f / 10000
+    @ticker_eur ||= (Ticker.eur.fetch "last").to_f
   end
 
   def ticker_gbp
-    @ticker_gbp ||= (Ticker.gbp.fetch "last").to_f / 10000
+    @ticker_gbp ||= (Ticker.gbp.fetch "last").to_f
   end
 
   def ticker_usd(tickers:)

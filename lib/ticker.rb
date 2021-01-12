@@ -37,7 +37,9 @@ class Ticker
   end
 
   def bitstamp_ticker_raw(symbol:)
-    Bitstamp::Net.get("/ticker/#{symbol}").body_str
+    url = "https://www.bitstamp.net/api/v2/ticker/#{symbol}"
+    resp = Net::HTTP.get_response URI url
+    resp.body
   end
 
 end
