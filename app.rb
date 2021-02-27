@@ -21,7 +21,7 @@ class App < Roda
     r.root {
       http_auth
       @balances = Balance.all
-      @bal_total = @balances.sum{ |bal| bal[:usd] }
+      @bal_total = @balances.sum{ |bal| bal[:usd] || 0 }
       view 'index'
     }
 

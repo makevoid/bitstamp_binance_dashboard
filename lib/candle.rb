@@ -7,10 +7,22 @@ class Candle
     @asset = asset
   end
 
-  def candle
+  def candle_data_weekly
+    one_day = 3600*24
+    one_week = one_day * 7
+    date = one_week
+    Binance::Api.candlesticks! symbol: @asset, interval: "1d", startTime: (Time.now - date).to_i*1000
+  end
+
+  def candle_data_daily
     one_day = 3600*24
     date = one_day
-    data = Binance::Api.candlesticks! symbol: @asset, interval: "1h", startTime: (Time.now - date).to_i*1000
+    Binance::Api.candlesticks! symbol: @asset, interval: "1h", startTime: (Time.now - date).to_i*1000
+  end
+
+  def candle
+    data = candle_data_weekly
+    # data = candle_data_daily # uncomment/use this if you want 1 day range (x24 1h candles)
     data = pick_data data
     data = convert_data data
     convert_data_gchart data
